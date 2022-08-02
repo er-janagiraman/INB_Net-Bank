@@ -1,0 +1,46 @@
+<div class="header">
+    <ul id="header">
+        <li class="list"><a class="active" href="#home">INB Net Bank</a></li>
+        <li class="list" style="float:right"><a routerLink="/login">LogOut</a></li>
+    </ul>
+</div>
+<br><br><br><br>
+<div>
+    <h5 style="padding-left: 40px; display: inline; width: 92%;font-family: 'Roboto Slab', serif;">Welcome
+        {{customerdetails.firstName}}
+        {{customerdetails.lastName}}</h5>
+    <button id="btn" style="display: inline; width: 8%;" (click)="addAccount(customerdetails.customerId)">Add
+        Account</button>
+</div>
+<div>
+    <h5 style="padding-left: 40px; display: inline; width: 92%;font-family: 'Roboto Slab', serif;">Customer Id :
+        {{customerdetails.customerId}}</h5>
+</div>
+<br>
+<table style="width: 95%;" [border]="1" id="employee">
+    <tr>
+        <th>Account Id</th>
+        <th>Type of Account</th>
+        <th>Balance</th>
+        <th colspan="3" style="text-align: center;">Action</th>
+    </tr>
+
+    <tr *ngFor="let account of allAccountDetails">
+        <td>{{account.accountId}}</td>
+        <td>{{account.typeOfAccount}}</td>
+        <td>{{account.currentBalance}}</td>
+        <td style="text-align: center;"><button (click)="transfer(account.accountId)" class="details">Transfer</button>
+        </td>
+        <td style="text-align: center;"><button (click)="deposit(account.accountId)" class="details">Cheque
+                deposit</button></td>
+        <td style="text-align: center;"><button (click)="transaction(account.accountId)"
+                class="details">Transaction</button></td>
+    </tr>
+</table>
+
+
+
+<br><br>
+<div id="footer">
+    <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>

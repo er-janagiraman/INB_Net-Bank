@@ -1,0 +1,63 @@
+<div class="header">
+  <ul id="header">
+    <li class="list"><a class="active">INB Net Bank</a></li>
+    <li class="list" style="float: right;cursor: pointer;"><a
+        (click)="home(accountDetails.customerDetails.customerId)">Home</a></li>
+  </ul>
+</div>
+<br> <br>
+
+<form>
+  <div class="container">
+    <h1>Add Account</h1>
+    <br>
+    <div id="box">
+
+      <label><b>Customer Id</b></label>
+      <input type="text" name="userId" disabled required [(ngModel)]="accountDetails.customerDetails.customerId">
+
+      <label><b>Type of Account</b></label> <br>
+      <select class="select" name="typeOfAccount" [(ngModel)]="accountDetails.typeOfAccount" required (click)="fdd()">
+        <option class="select" value="" selected disabled hidden>Choose here</option>
+        <option class="select" value="savings">Savings</option>
+        <option class="select" value="current">Current</option>
+        <option class="select" value="fd">FD</option>
+      </select>
+
+      <div [hidden]="!fd">
+
+        <label><b>List of Account</b></label> <br>
+        <select name="cheque" [(ngModel)]="accountDetails.accountId" required (click)="acc(accountDetails.accountId)">
+          <option class="select" value="" selected disabled hidden>Choose here</option>
+          <option *ngFor="let ad of accountDetail" [value]="ad.accountId">{{ad.accountId}}</option>
+        </select>
+
+        <label><b>FD Amount</b></label>
+        <input type="tel" name="fdAmount" [(ngModel)]="this.fdAmount">
+
+        <label><b>Fd Duration</b></label> <br>
+        <select class="select" name="typeOfAccount" [(ngModel)]="duration" (click)="calculation()">
+          <option class="select" value="" selected disabled hidden>Choose here</option>
+          <option class="select" value="1">1 Year Rate of Interset 4.5 %</option>
+          <option class="select" value="2">2 Year Rate of Interset 5.0 %</option>
+          <option class="select" value="3">3 Year Rate of Interset 5.5 %</option>
+        </select>
+
+        <label><b>Maturity Amount : {{maturityAmount}}</b></label> <br>
+        <label><b>Total Amount : {{maturityAmount*1 + fdAmount*1}}</b></label> <br>
+
+      </div>
+
+      <label><b>Balance</b></label>
+      <input type="text" name="currentBalance" disabled [(ngModel)]="accDetail.currentBalance">
+      <hr>
+      <button type="submit" class="registerbtn" (click)="addAccount()">Submit</button> <br><br>
+      <h6 class="error">{{status}}{{Error}}</h6>
+    </div>
+    <br>
+  </div>
+</form>
+
+<div id="footer">
+  <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>

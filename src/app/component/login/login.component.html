@@ -1,0 +1,32 @@
+<div class="header">
+  <ul id="header">
+    <li class="list"><a class="active">INB Net Bank</a></li>
+    <!-- <li class="list" style="float:right"><a routerLink="login">Login</a></li> -->
+  </ul>
+</div>
+<br> <br>
+
+<form>
+  <div class="container">
+    <br>
+    <h1>Login</h1>
+    <br> <br>
+    <div id="input">
+      <label><b>User Id</b></label>
+      <input type="text" name="userId" required [(ngModel)]="login.userId">
+
+      <label><b>Password</b></label>
+      <input type="password" name="psw" required [(ngModel)]="login.password">
+      <br><br>
+      <button type="submit" class="registerbtn" (click)="loginBtn(login.userId)">Login</button><br><br>
+      <b>New User ? <a routerLink="newLogin" (click)="newLogin()">Register</a></b>
+      <b style="padding-left: 80px;">Check ? <a routerLink="newLogin" (click)="checkStatus()">Status</a></b>
+      <br><br>
+      <h6 class="error">{{error}}{{server}}{{note}}</h6>
+    </div>
+  </div>
+</form>
+<br>
+<div id="footer">
+  <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>

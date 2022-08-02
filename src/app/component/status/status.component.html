@@ -1,0 +1,22 @@
+<div class="header">
+    <ul id="header">
+        <li class="list"><a class="active">INB Net Bank</a></li>
+        <li class="list" style="float: right; margin-right: 20px;"><a routerLink="/login">Login</a></li>
+    </ul>
+</div>
+<br> <br>
+
+<div id="box">
+    <h5 class="pre"> User ID <b style="margin-left: 105px">: {{customerDetails.loginDetails.userId}}</b></h5>
+    <!-- <h5 class="pre"> Password <b style="margin-left: 80px">: {{customerDetails.loginDetails.password}}</b></h5> -->
+    <h5 class="pre"> Customer Name <b style="margin-left: 23px">:
+            {{customerDetails.firstName}} {{customerDetails.lastName}}</b></h5>
+    <!-- <h5 class="pre"> Acount Number <b style="margin-left: 20px">: {{accountDetails.accountId}}</b></h5> -->
+    <h5 class="pre"> Customer Id <b style="margin-left: 61px">: {{customerDetails.customerId}}</b></h5>
+    <h5 class="pre"> Account Status <b style="margin-left: 32px">: {{customerDetails.customerStatus}}</b></h5><br>
+    <h6 class="note">( Note : When the account status is approved you will able to login )<b></b></h6>
+</div>
+
+<div id="footer">
+    <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>

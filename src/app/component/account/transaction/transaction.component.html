@@ -1,0 +1,58 @@
+<div class="header">
+    <ul id="header">
+        <li class="list"><a class="active" href="#home">INB Net Bank</a></li>
+        <li class="list" style="float:right"><a routerLink="/login">LogOut</a></li>
+    </ul>
+</div>
+<br><br><br> <br>
+<button id="home" (click)="home()">Home</button>
+<button id="pdf" (click)="download()">Download PDF</button>
+<br> <br>
+<div id="target">
+    <h5 id="acc">Account Id : {{accountId}}</h5>
+    <table id="employee" style="width: 95%;" [border]="1">
+        <thead>
+            <tr>
+                <th>Transaction Id</th>
+                <th>Account Id To</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Transaction Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let history of transactionHistory">
+                <td>{{history.transactionId}}</td>
+                <td>{{history.accountIdTo.accountId}}</td>
+                <td>{{history.transactionAmount}}</td>
+                <td>{{history.transactionDate}}</td>
+                <td>{{history.transactionType}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<br><br>
+<div id="footer">
+    <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#employee').DataTable({
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'pdf',
+                title: 'Customized PDF Title',
+                filename: 'customized_pdf_file_name'
+            }, {
+                extend: 'excel',
+                title: 'Customized EXCEL Title',
+                filename: 'customized_excel_file_name'
+            }, {
+                extend: 'csv',
+                filename: 'customized_csv_file_name'
+            }]
+        });
+    });
+</script>

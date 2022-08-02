@@ -1,0 +1,121 @@
+ #header {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #00baf2;
+   position: fixed;
+   width: 100%;
+   font-weight: bold;
+   font-family: 'Roboto Slab', serif;
+ }
+
+ .list {
+   float: left;
+   /* border-right:1px solid #bbb; */
+ }
+
+ /* Set a style for the submit button */
+ .registerbtn {
+   background-color: #042e6f;
+   color: white;
+   font-weight: bold;
+   padding: 10px 10px;
+   margin: 1px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+ }
+
+ #home {
+   background-color: #042e6f;
+   color: white;
+   font-weight: bold;
+   padding: 5px 5px;
+   margin: 5px;
+   border: none;
+   cursor: pointer;
+   width: 10%;
+   margin-left: 100px;
+ }
+
+ h1 {
+   text-align: center;
+ }
+
+
+ /* .list:last-child {
+    border-right: none;
+  } */
+
+ .list a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+ }
+
+ .list a:hover:not(.active) {
+   background-color: #1b3070;
+ }
+
+ .active {
+   background-color: #1b3070;
+ }
+
+ /* end----------------------------------------------------------------------- */
+
+ /* ---------------------------------------------------------------------------- */
+
+ /* Add padding to containers */
+ .container {
+   width: 40%;
+   padding: 16px;
+   background-color: white;
+   box-shadow: 0 0 25px #adacac;
+ }
+
+ select {
+   width: 100%;
+   padding: 5px;
+   margin: 5px 0 5px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+ }
+
+ /* Full-width input fields */
+ input[type=text],
+ input[type=password],
+ input[type=tel] {
+   width: 100%;
+   padding: 5px;
+   margin: 5px 0 5px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+ }
+
+ input[type=text]:focus,
+ input[type=password]:focus,
+ input[type=tel]:focus {
+   background-color: #ddd;
+   outline: none;
+ }
+
+ /* Overwrite default styles of hr */
+ hr {
+   border: 1px solid #f1f1f1;
+   margin-bottom: 25px;
+ }
+
+
+ #footer {
+   text-align: center;
+   padding: 3px;
+   padding-top: 5px;
+   background-color: #00baf2;
+   color: #042e6f;
+   font-family: 'Roboto Slab', serif;
+ }

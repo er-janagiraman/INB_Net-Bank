@@ -1,0 +1,148 @@
+ #header {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #00baf2;
+   position: fixed;
+   width: 100%;
+   font-weight: bold;
+   font-family: 'Roboto Slab', serif;
+ }
+
+ .list {
+   float: left;
+   /* border-right:1px solid #bbb; */
+ }
+
+ .list:last-child {
+   border-right: none;
+ }
+
+ .list a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-family: 'Roboto Slab', serif;
+ }
+
+ .list a:hover:not(.active) {
+   background-color: #1b3070;
+ }
+
+ .active {
+   background-color: #1b3070;
+ }
+
+ /* end----------------------------------------------------------------------- */
+ table {
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ table {
+   margin-left: auto;
+   margin-right: auto;
+
+ }
+
+ #employee {
+   font-family: 'Roboto Slab', serif;
+   border-collapse: collapse;
+   width: 80%;
+ }
+
+ #employee td,
+ #employee th {
+   border: 1px solid #ddd;
+   padding: 1px;
+ }
+
+ #employee tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+
+ #employee tr:hover {
+   background-color: #ddd;
+ }
+
+ #employee th {
+   padding-top: 2px;
+   padding-bottom: 2px;
+   text-align: left;
+   background-color: #00baf2;
+   color: white;
+   font-family: 'Roboto Slab', serif;
+ }
+
+ button {
+   width: 50%;
+   color: white;
+   padding: 4px 5px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   background-color: #00baf2;
+   font-size: 11px;
+ }
+
+ /* ---------------------------------------------------------------------------- */
+ #employee {
+   font-family: 'Roboto Slab', serif;
+   border-collapse: collapse;
+   width: 70%;
+ }
+
+ #employee td {
+   color: black;
+ }
+
+ #employee td,
+ #employee th {
+   border: 1px solid #ddd;
+   padding: 0;
+ }
+
+ #btn {
+   float: right;
+   width: 100px;
+   color: white;
+   margin-right: 40px;
+   background-color: #00baf2;
+   font-weight: bold;
+   font-family: 'Roboto Slab', serif;
+
+ }
+
+ #employee tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+
+ #employee tr:hover {
+   background-color: #ddd;
+ }
+
+ #employee th {
+   padding-top: 2px;
+   padding-bottom: 2px;
+   text-align: center;
+   background-color: #042e6f;
+   color: white;
+ }
+
+ #employee {
+   width: 70%;
+   text-align: center;
+ }
+
+ #footer {
+   margin-top: 1px;
+   text-align: center;
+   padding: 3px;
+   padding-top: 5px;
+   background-color: #00baf2;
+   color: #042e6f;
+   font-family: 'Roboto Slab', serif;
+ }

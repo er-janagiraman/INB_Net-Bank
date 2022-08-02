@@ -1,0 +1,68 @@
+<div class="header">
+  <ul id="header">
+    <li class="list"><a class="active">INB Net Bank</a></li>
+    <li class="list" style="float: right; margin-right: 20px;"><a routerLink="/login">Home</a></li>
+  </ul>
+</div>
+<br> <br>
+
+<div id="step">
+  <h4>Step 2</h4>
+</div>
+
+<form>
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <br>
+    <div id="box">
+
+      <label><b>User Id</b></label>
+      <input type="text" name="userId" disabled required [(ngModel)]="customerDetails.loginDetails.userId">
+      
+      <label><b>First name</b></label>
+      <input type="text" name="fName" required [(ngModel)]="customerDetails.firstName" >
+
+      <label><b>Last name</b></label>
+      <input type="text" name="lName" required [(ngModel)]="customerDetails.lastName">
+
+      <label><b>Email</b></label>
+      <input type="email" name="email" required [(ngModel)]="customerDetails.emailId">
+
+      <label><b>Address-1</b></label>
+      <input type="text" name="add1" required [(ngModel)]="customerDetails.addressLine1">
+
+      <label><b>Address-2</b></label>
+      <input type="text" name="add2" [(ngModel)]="customerDetails.addressLine2">
+
+      <label><b>Address-3</b></label>
+      <input type="text" name="add3" [(ngModel)]="customerDetails.addressLine3">
+
+      <label><b>City</b></label>
+      <input type="text" name="city" required [(ngModel)]="customerDetails.city">
+
+      <label><b>State</b></label>
+      <input type="text" name="state" required [(ngModel)]="customerDetails.state">
+
+      <label><b>ZipCode</b></label>
+      <input type="tel" name="zipcode" required [(ngModel)]="customerDetails.zipcode">
+
+      <label><b>Mobile No</b></label>
+      <input type="tel" name="mobileNo" required [(ngModel)]="customerDetails.mobileNumber">
+
+      <label><b>Landline No</b></label>
+      <input type="tel" name="landLineNo" [(ngModel)]="customerDetails.landLine">
+
+      <hr>
+
+      <button type="submit" class="registerbtn" (click)="registerBtn(customerDetails.loginDetails.userId)">Next</button>
+      <br><br>
+      <h6 class="error">{{status}}{{Error}}</h6>
+    </div>
+    <br>
+  </div>
+</form>
+
+<div id="footer">
+  <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>

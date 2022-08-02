@@ -1,0 +1,68 @@
+<div class="header">
+    <ul id="header">
+        <li class="list"><a class="active" href="#home">INB Net Bank</a></li>
+        <li class="list" style="float:right"><a routerLink="/login">Logout</a></li>
+        <li class="list" style="float:left"><a routerLink="/customerrequest">Customer Requests</a></li>
+        <li class="list" style="float:left"><a routerLink="/chequerequest">Cheque Requests</a></li>
+    </ul>
+</div>
+
+<br><br><br><br>
+<table style="width: 80%;" [border]="1" id="employee">
+    <tr>
+        <th>Account Id</th>
+        <th>Account Id To</th>
+        <th>Cheque Number</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th colspan="3" style="text-align: center;">Action</th>
+    </tr>
+    <tr *ngFor="let chequeObj of chequeArr">
+        <td>{{chequeObj.accountId.accountId}}</td>
+        <td>{{chequeObj.accountIdTo.accountId}}</td>
+        <td>{{chequeObj.chequeNo}}</td>
+        <td>{{chequeObj.depositeAmount}}</td>
+        <td>{{chequeObj.chequeStatus}}</td>
+        <td style="text-align: center;"><button value="approved" class="btnn" data-bs-toggle="modal"
+                data-bs-target="#myModal" (click)="details(chequeObj)">Details</button></td>
+        <td style="text-align: center;"><button class="approve" value="approved" (click)="approve(chequeObj)"
+                [disabled]="false">Approve</button></td>
+        <td style="text-align: center;"><button class="decline" value="decline"
+                (click)="decline(chequeObj)">Decline</button></td>
+    </tr>
+</table>
+
+<br><br>
+<br><br> <br> <br>
+<div id="footer">
+    <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Account Balance</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h5>Account Id : {{accountObj.accountId}}</h5>
+                <h5>Account Balance : {{accountObj.currentBalance}}</h5>
+                <h5>Debit Amount : -{{chequeDetails.depositeAmount}}</h5>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

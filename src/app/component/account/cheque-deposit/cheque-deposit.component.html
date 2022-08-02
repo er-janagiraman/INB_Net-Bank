@@ -1,0 +1,42 @@
+<div class="header">
+  <ul id="header">
+    <li class="list"><a class="active" href="#home">INB Net Bank</a></li>
+    <li class="list" style="float:right"><a routerLink="/login">LogOut</a></li>
+  </ul>
+</div>
+<br> <br><br>
+<button id="home" (click)="home()">Home</button>
+
+<form>
+  <div class="container">
+    <h1>Cheque Deposit</h1>
+    <!-- <p>Please fill in this form to create an account.</p> -->
+    <br>
+    <div id="box">
+
+      <label><b>Bank Name</b></label>
+      <input type="text" name="add1" disabled value="INB Bank"><br>
+
+      <label><b>Cheque No</b></label>
+      <select name="cheque" [(ngModel)]="chequeDetail.chequeNo" required>
+        <option value="" selected disabled hidden>Choose here</option>
+        <option *ngFor="let cd of chequeDetails" [value]="cd.chequeNo">{{cd.chequeNo}}</option>
+      </select>
+
+      <label><b>Account Id</b></label>
+      <input type="text" name="userId" disabled required [(ngModel)]="chequeDetail.accountId.accountId"><br>
+
+      <label><b>To Account</b></label>
+      <input type="text" name="lName" required [(ngModel)]="chequeDetail.accountIdTo"><br>
+
+      <label><b>Amount</b></label>
+      <input type="tel" name="lName" required [(ngModel)]="chequeDetail.depositeAmount"><br>
+      <br>
+
+      <button type="submit" class="registerbtn" (click)="deposit()">Deposit</button><br>
+    </div>
+  </div>
+</form> <br><br>
+<div id="footer">
+  <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>
