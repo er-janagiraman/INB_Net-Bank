@@ -184,7 +184,7 @@ public class TransactionService implements TransactionServiceInterface {
 				boolean withdrawTransactionStatus = transactiondetailsRepositoryInterface
 						.addTransactionDetails(withdrawTransaction);
 
-				accountDetailsTo.setCurrentBalance(accountDetailsTo.getCurrentBalance() + amount);
+				accountDetailsTo.setCurrentBalance(accountDetailsTo.getCurrentBalance() );
 
 				TransactionDetails depositTransaction = new TransactionDetails();
 
@@ -230,7 +230,7 @@ public class TransactionService implements TransactionServiceInterface {
 				boolean withdrawTransactionStatus = transactiondetailsRepositoryInterface
 						.addTransactionDetails(withdrawTransaction);
 
-				accountDetailsTo.setCurrentBalance(accountDetailsTo.getCurrentBalance() + amount);
+				accountDetailsTo.setCurrentBalance(accountDetailsTo.getCurrentBalance());
 
 				TransactionDetails depositTransaction = new TransactionDetails();
 

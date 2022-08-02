@@ -57,7 +57,7 @@ public class AccountDetailsController {
 				transactionDetails.setTransactionDate(LocalDate.now());
 				transactionDetails.setTransactionTime(LocalTime.now());
 				transactionDetails.setTransactionType("fd");
-				transactionServiceInterface.accountTransferTransaction(transactionDetails);
+				transactionServiceInterface.fixedDepositeTransaction(transactionDetails);
 				return true;
 			}
 		} else {
