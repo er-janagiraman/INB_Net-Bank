@@ -30,7 +30,9 @@ export class CreateAccountComponent implements OnInit {
   }
 
   registerBtn() {
-    
+    if(this.accountDetails.typeOfAccount = "savings"){
+      this.accountDetails.rateOfInterest=3.5;
+    }
     this.customerService.checkStatus(this.userId).subscribe(data => {
       this.customerDetails = data;
       this.accountDetails.customerDetails = this.customerDetails;

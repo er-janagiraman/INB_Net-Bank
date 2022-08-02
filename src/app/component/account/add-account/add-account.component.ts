@@ -24,7 +24,6 @@ export class AddAccountComponent implements OnInit {
   accountDetail: AccountDetails[] = [];
   accDetail: AccountDetails = new AccountDetails();
   newFdAccountDetails: AccountDetails = new AccountDetails();
-
   constructor(private customerService: CustomerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -32,8 +31,6 @@ export class AddAccountComponent implements OnInit {
     this.customerService.getcustomerdetailsbycustomerid(this.accountDetails.customerDetails.customerId).subscribe(data => {
       this.accountDetail = data;
     });
-
-
   }
 
   addAccount() {
@@ -51,14 +48,18 @@ export class AddAccountComponent implements OnInit {
       this.newFdAccountDetails.rateOfInterest = 5.5;
       this.newFdAccountDetails.typeOfAccount = "fd";
       this.customerService.createAccount(this.newFdAccountDetails).subscribe(data => {
-        if (data == true)
+        if (data == true) {
           alert(" FD Account  created Successfully !!!!");
+          this.router.navigate(['customer', this.accountDetails.customerDetails.customerId]);
+        }
       }, error => {
         alert(" Server Issue !!!!");
-      }
-      );
+      });
     }
     else {
+      if (this.accountDetails.typeOfAccount = "savings") {
+        this.accountDetails.rateOfInterest = 3.5;
+      }
       this.accountDetails.accountStatus = "pending";
       this.customerService.createAccount(this.accountDetails).subscribe(data => {
         if (data == true) {
@@ -69,8 +70,7 @@ export class AddAccountComponent implements OnInit {
         }
       }, error => {
         this.Error = "Server issue, Please try again !!!!";
-      }
-      );
+      });
     }
   }
 
@@ -84,21 +84,22 @@ export class AddAccountComponent implements OnInit {
   }
 
   acc(accountId: number) {
-    this.customerService.accDetailByAcc(accountId).subscribe(data => {
-      this.accDetail = data;
-    });
+    if (accountId >= 10) {
+      this.customerService.accDetailByAcc(accountId).subscribe(data => {
+        this.accDetail = data;
+      });
+    }
   }
 
   calculation() {
-    if (this.duration == 1) {
+    if (this.duration == 1)
       this.maturityAmount = (this.fdAmount * 1.045 * 1) / 100;
-    }
-    else if (this.duration == 2) {
+
+    else if (this.duration == 2)
       this.maturityAmount = (this.fdAmount * 1.050 * 2) / 100;
-    }
+
     else if (this.duration == 3)
       this.maturityAmount = (this.fdAmount * 1.055 * 3) / 100;
   }
-
 
 }

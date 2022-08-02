@@ -10,8 +10,8 @@ import { LoginDetails } from '../pojo/login-details';
 
 export class LoginService {
 
-  private baseURL: string = "http://192.168.1.63:8080/netbankingapi/logindetails/";
-  private customerURL: string = "http://192.168.1.63:8080/netbankingapi/";
+  private baseURL: string = "http://localhost:8080/netbankingapi/logindetails/";
+  private customerURL: string = "http://localhost:8080/netbankingapi/";
 
   constructor(private http: HttpClient) { }
 

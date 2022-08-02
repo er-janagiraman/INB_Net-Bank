@@ -13,7 +13,7 @@ import { TransactionDetails } from '../pojo/transaction-details';
 
 export class CustomerService {
 
-  private baseURL: string = "http://192.168.1.63:8080/netbankingapi/";
+  private baseURL: string = "http://localhost:8080/netbankingapi/";
 
   constructor(private http: HttpClient) { }
 

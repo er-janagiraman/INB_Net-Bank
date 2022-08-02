@@ -18,9 +18,9 @@ export class StatusComponent implements OnInit {
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    
+
     this.customerDetails = JSON.parse(sessionStorage.getItem("customer") || '');
-  
+
     this.customerService.checkStatus(this.customerDetails.loginDetails.userId).subscribe(data => {
       this.customerDetails = data;
     });

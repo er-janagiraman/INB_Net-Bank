@@ -32,7 +32,6 @@ export class ValidateStatusComponent implements OnInit {
           sessionStorage.setItem('customer', JSON.stringify(this.customerDetails));
           this.router.navigate(['status']);
         });
-
       }
     }, error => {
       this.Error = "Invalid UserName and Password !!!! Please try again";

@@ -23,23 +23,19 @@ export class ChequeDepositComponent implements OnInit {
     this.customerService.getCheque(this.chequeDetail.accountId.accountId).subscribe(data => {
       this.chequeDetails = data;
     });
-
     this.customerService.accDetailByAcc(this.chequeDetail.accountId.accountId).subscribe(data => {
       this.accountDetails = data;
     });
   }
 
   deposit() {
-
     this.chequeDetail.chequeStatus = "pending";
     this.customerService.chequeDeposit(this.chequeDetail).subscribe(data => {
       alert("Transcation Sucessful !!!!");
       this.router.navigate(['customer', this.customerId]);
     }, error => {
       alert("Server Issue Please try again !!!!");
-    }
-    );
-
+    });
 
   }
 

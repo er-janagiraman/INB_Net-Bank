@@ -44,6 +44,5 @@ export class TransactionComponent implements OnInit {
       PDF.save('Transaction_File.pdf');
     });
   }
-
 }
-  
+

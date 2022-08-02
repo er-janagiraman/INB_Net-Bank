@@ -28,7 +28,6 @@ export class CustomerDetailsComponent implements OnInit {
       this.allAccountDetails = data;
     });
 
-
   }
 
   addAccount(customerId: string) {

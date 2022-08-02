@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginDetails = JSON.parse(sessionStorage.getItem('customer') || '');
-    
+
     this.customerDetails.loginDetails = this.loginDetails;
   }
 

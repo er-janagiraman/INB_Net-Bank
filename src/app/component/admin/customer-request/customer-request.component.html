@@ -16,14 +16,16 @@
         <th>Account Status</th>
         <th colspan="2" style="text-align: center;">Action</th>
     </tr>
-    <tr *ngFor="let accept of accountDetails" >
+    <tr *ngFor="let accept of accountDetails">
         <td>{{accept.accountId}}</td>
-       <!-- <td>{{accept.}}</td>  -->
+        <!-- <td>{{accept.}}</td>  -->
         <td>{{accept.accountStatus}}</td>
         <!-- <td style="text-align: center;" ><button class="approve" value="approved" (click)="approve(accept)">Approve</button></td> -->
-        <td style="text-align: center;" ><button class="approve" value="approved" (click)="approve(accept)">Approve</button></td>
-        <td style="text-align: center;" ><button class="decline" value="decline" (click)="decline(accept)">Decline</button></td> 
- </tr>
+        <td style="text-align: center;"><button class="approve" value="approved"
+                (click)="approve(accept)">Approve</button></td>
+        <td style="text-align: center;"><button class="decline" value="decline"
+                (click)="decline(accept)">Decline</button></td>
+    </tr>
 </table>
 
 
@@ -31,9 +33,8 @@
 
 
 
-   <br><br>
-   <br><br> <br> <br>
-   <div id="footer">
-     <h6>© INB Net Bank 2022 Copy rights received</h6>
-   </div>
-     
+<br><br>
+<br><br> <br> <br>
+<div id="footer">
+    <h6>© INB Net Bank 2022 Copy rights received</h6>
+</div>

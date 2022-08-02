@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   loginBtn(userId: string) {
     this.loginService.getLoginData(userId).subscribe(data => {
-      
+
       if (data.customerStatus == "approved") {
         this.customerDetails = data;
         this.loginService.login(this.login).subscribe(data => {
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
           }
         }, error => {
           this.server = "Invalid UserName and Password !!!! Please try again";
-         
+
         });
 
       } else {

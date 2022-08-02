@@ -19,10 +19,8 @@ export class NewLoginComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
-
     this.loginService.getNextUserId().subscribe(
       data => {
-       
         this.newLogin = data;
         this.newLogin.role = 'customer';
       }
@@ -30,8 +28,6 @@ export class NewLoginComponent implements OnInit {
   }
 
   newLoginBtn() {
-
-  
     this.loginService.newLogin(this.newLogin).subscribe(data => {
       if (data == true) {
         sessionStorage.setItem('customer', JSON.stringify(this.newLogin));
